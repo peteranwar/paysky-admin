@@ -21,7 +21,7 @@ import HttpHelpers from './services/helpers';
 const Login = lazy(() => import('./pages/login'));
 const Home = lazy(() => import('./pages/home'));
 const Products = lazy(() => import('./pages/products'));
-const ProductDetails = lazy(() => import('./pages/products/ProductDetails'));
+const ProductDetails = lazy(() => import('./pages/products/productDetails'));
 const AddProduct = lazy(() => import('./pages/products/addProduct'));
 const Categories = lazy(() => import('./pages/categories'));
 
