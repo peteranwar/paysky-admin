@@ -209,13 +209,6 @@ const Products = () => {
             {categoriesData?.map((tab, index) =>
                 <CustomTabPanel value={tabValue} index={index} key={tab.id}>
                     <Grid container spacing={2}>
-                        {/* In case of loading */}
-                        {(isProductsLoading || isProductsFetching) && [1, 2, 3, 4].map(indx => (
-                            <Grid item xs={12} md={6} lg={4} key={indx}>
-                                <ProductCardLoading key={indx} />
-                            </Grid>
-                        ))}
-
                         {/* In case of Error */}
                         {isProductsError && <ErrorComponent error={productsError} />}
 
@@ -231,6 +224,13 @@ const Products = () => {
                                 ))
                             }
                         </>}
+
+                        {/* In case of loading */}
+                        {(isProductsLoading || isProductsFetching) && [1, 2, 3, 4].map(indx => (
+                            <Grid item xs={12} md={6} lg={4} key={indx}>
+                                <ProductCardLoading key={indx} />
+                            </Grid>
+                        ))}
 
                         {/* Hide View More btn in Case the total number big than the limit and in case showing specific category */}
                         {((pageLimit < PRODUCTS_TOTAL) && tabValue === 0 && !searchValue) && <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', my: { xs: 2, md: 4 } }}>
