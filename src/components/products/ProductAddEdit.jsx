@@ -9,6 +9,7 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import LoadingButton from '@mui/lab/LoadingButton';
 
@@ -86,7 +87,6 @@ const ProductAddEdit = ({ id, productData }) => {
       await ProductsApi.updateProduct(id, data).then(() => {
         toast.success('Updated Successfully');
       }).catch(error => {
-        console.log('error', error)
         toast.error(error?.response?.data ?? 'Something went wrong!');
       }).finally(() => {
         setLoading(false);
@@ -200,6 +200,12 @@ const ProductAddEdit = ({ id, productData }) => {
               </Grid>
 
               <Grid item xs={12} md={6}>
+                <FormLabel sx={{
+                  display: 'flex',
+                  marginBottom: '10px', fontWeight: '700', color: "#292D32",
+                  fontSize: { xs: '15px', md: '18px' }
+                }}>Product Image
+                </FormLabel>
                 <Box display='flex' alignItems='center' justifyContent='space-between' p={{ xs: 1, lg: 1.5 }} sx={{ border: '1px solid #D7D7D7', borderRadius: '16px' }}>
                   {/* IN CASE OF EDITING, WE WILL SHOW THE IMAGE */}
                   {values.image && <ImageMain srcUrl={values.image}
