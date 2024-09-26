@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 // Material UI Components
 import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
@@ -136,7 +136,7 @@ const ProductAddEdit = ({ id, productData }) => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <Grid container spacing={{ xs: 2, md: 4 }}>
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <CustomInput
                   hasBorder={true}
                   register={register}
@@ -151,7 +151,7 @@ const ProductAddEdit = ({ id, productData }) => {
                 />
               </Grid>
 
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <CustomInput
                   hasBorder={true}
                   register={register}
@@ -167,7 +167,7 @@ const ProductAddEdit = ({ id, productData }) => {
                 />
               </Grid>
 
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <CustomSelect
                   label='Category'
                   id='category'
@@ -181,7 +181,7 @@ const ProductAddEdit = ({ id, productData }) => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <CustomInput
                   hasBorder={true}
                   register={register}
@@ -199,7 +199,7 @@ const ProductAddEdit = ({ id, productData }) => {
                 />
               </Grid>
 
-              <Grid item xs={12} md={6}>
+              <Grid >
                 <FormLabel sx={{
                   display: 'flex',
                   marginBottom: '10px', fontWeight: '700', color: "#292D32",
@@ -228,7 +228,7 @@ const ProductAddEdit = ({ id, productData }) => {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} sx={{ my: { xs: 2, md: 4 }, display: 'flex', justifyContent: 'center', gap: 2 }}>
+              <Grid size={12} sx={{ my: { xs: 2, md: 4 }, display: 'flex', justifyContent: 'center', gap: 2 }}>
                 <LoadingButton loading={loading} variant='contained' type="submit" sx={{ px: { xs: 3, md: 4 } }}>
                   Submit
                 </LoadingButton>

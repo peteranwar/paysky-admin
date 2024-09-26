@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 
 // Material UI Components
 import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -78,7 +78,7 @@ const Login = () => {
     return (
         <Container>
             <Grid container spacing={2} justifyContent="center">
-                <Grid item xs={12} sm={10} md={8} lg={6}>
+                <Grid size={{xs:12, sm: 10, md: 8, lg: 6}}>
                     <Box textAlign='center' mt={{ xs: 3, md: 5, lg: 8 }} mb={{ xs: 3, md: 4, lg: 5 }}>
                         <Typography variant="h1">
                             Login Page
@@ -87,7 +87,6 @@ const Login = () => {
                             Enter your email and password to login
                         </Typography>
                     </Box>
-
                     <Box
                         component='form'
                         noValidate

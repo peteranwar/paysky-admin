@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 
 import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
+import Grid from "@mui/material/Grid2"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { DataGrid } from '@mui/x-data-grid';
@@ -68,12 +68,12 @@ const Home = () => {
 
       {/* Data Case */}
       {usersData && !isUsersLoading && <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Box sx={{
-            width: '100%',
+            // width: '100%',
             overflow: 'auto',
             '& .MuiDataGrid-root': {
-              width: '100%',
+              // width: '100%',
             }
           }}>
             <DataGrid

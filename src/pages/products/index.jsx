@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 
 // Material UI Components
 import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
+import Grid from "@mui/material/Grid2"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Button from "@mui/material/Button"
@@ -142,7 +142,7 @@ const Products = () => {
 
             {/* Categories */}
             <Grid container sx={{ mb: { xs: 3, md: 5 } }}>
-                <Grid item xs={12} display='flex' justifyContent='end'>
+                <Grid size={12} display='flex' justifyContent='end'>
                     <Tabs
                         value={tabValue}
                         onChange={handleChangeTab}
@@ -186,7 +186,7 @@ const Products = () => {
 
             {/* Search Field */}
             <Grid justifyContent='end' container sx={{ mb: { xs: 2, md: 3 } }}>
-                <Grid item xs={12} sm={10} md={8} lg={6}>
+                <Grid size={{ xs: 12, sm: 10, md: 8, lg: 6 }}>
                     <TextField
                         placeholder='Search Products'
                         sx={{
@@ -218,7 +218,7 @@ const Products = () => {
                                 <Typography variant="h3" color='error' mx='auto' my={{ xs: 3, md: 4 }}>No Data Found!</Typography>
                                 :
                                 (filteredData?.length > 0 ? filteredData : productsData)?.map(product => (
-                                    <Grid item xs={12} md={6} lg={4} key={product.id}>
+                                    <Grid size={{ xs: 12, md: 6, lg: 4 }} key={product.id}>
                                         <ProductCard product={product} />
                                     </Grid>
                                 ))
@@ -227,13 +227,13 @@ const Products = () => {
 
                         {/* In case of loading */}
                         {(isProductsLoading || isProductsFetching) && [1, 2, 3, 4].map(indx => (
-                            <Grid item xs={12} md={6} lg={4} key={indx}>
+                            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={indx}>
                                 <ProductCardLoading key={indx} />
                             </Grid>
                         ))}
 
                         {/* Hide View More btn in Case the total number big than the limit and in case showing specific category */}
-                        {((pageLimit < PRODUCTS_TOTAL) && tabValue === 0 && !searchValue) && <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', my: { xs: 2, md: 4 } }}>
+                        {((pageLimit < PRODUCTS_TOTAL) && tabValue === 0 && !searchValue) && <Grid size={12} sx={{ display: 'flex', justifyContent: 'center', my: { xs: 2, md: 4 } }}>
                             <LoadingButton loading={isProductsFetching} variant="contained" color="primary" onClick={() => setPageLimit(pageLimit + LIMIT)}>
                                 View More
                             </LoadingButton>
